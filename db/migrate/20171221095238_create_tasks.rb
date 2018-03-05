@@ -4,7 +4,7 @@ class CreateTasks < ActiveRecord::Migration[5.0]
       t.string :title
       t.string :description
       t.integer :priority
-      t.boolean :active
+      t.boolean :active, default: true
       t.date :due_date
       t.integer :user_id
       t.timestamps

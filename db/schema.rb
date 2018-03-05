@@ -19,11 +19,11 @@ ActiveRecord::Schema.define(version: 20180119094915) do
     t.string   "title"
     t.string   "description"
     t.integer  "priority"
-    t.boolean  "active"
+    t.boolean  "active",      default: true
     t.date     "due_date"
     t.integer  "user_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "users", force: :cascade do |t|

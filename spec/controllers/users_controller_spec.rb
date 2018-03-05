@@ -5,11 +5,11 @@ RSpec.describe UsersController, type: :controller do
   describe '#create' do
 
     let(:valid_user_params) {
-      { user: { email: 'person@example.com', password: '123qwe', password_confirmation: '123qwe', username: 'username', firstname: 'First', lastname: 'Last' } }
+      { user: { email: 'person@example.com', password: '123qwe', password_confirmation: '123qwe',  first_name: 'First', last_name: 'Last' } }
     }
 
      let(:invalid_user_params) {
-      { user: { email: '', password: '', password_confirmation: '', username: '', firstname: '', lastname: ''} }
+      { user: { email: '', password: '', password_confirmation: '',  first_name: '', last_name: ''} }
     }
 
     it 'returns a successful response' do
@@ -26,7 +26,7 @@ RSpec.describe UsersController, type: :controller do
 
   describe '#email confirmation' do
 
-    let(:valid_user_params) { { email: 'person@example.com', password: '123qwe', password_confirmation: '123qwe', username: 'username', firstname: 'First', lastname: 'Last', token: SecureRandom.hex(15) } }
+    let(:valid_user_params) { { email: 'person@example.com', password: '123qwe', password_confirmation: '123qwe', first_name: 'First', last_name: 'Last', token: SecureRandom.hex(15) } }
     let(:user) { User.create(valid_user_params) }
 
     it 'returns a successful response' do

@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
 
   accepts_nested_attributes_for :tasks
 
+  has_secure_token :token
+
   has_secure_password
 
   validates :email, presence: true, uniqueness: true
